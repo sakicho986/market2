@@ -1,0 +1,56 @@
+.mypage__container {
+    size: 50px;
+    display: flex;
+    flex-direction: row;
+    margin-top: 10%;
+    margin-left: 5%;
+}
+
+.mypage__container--recommend {
+    color: red;
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: row;
+    margin-right: 5%;
+}
+
+.mypage__container--list {
+    font-size: 20px;
+    font-weight: bold;
+    color: gray;
+}
+
+.mypage__layout--line {
+    height: 3px;
+    background-color: gray;
+}
+
+.mypage__wrapper {
+    display: flex;
+    justify-content: center;
+    margin-left: 4%;
+}
+
+.mypage__wrapper--post {
+    background-color: #DADBDD;
+    width: 160px;
+    height: 160px;
+    float: left;
+    margin-right: 10%;
+}
+
+.mypage__wrapper1 {
+    display: flex;
+    justify-content: center;
+    margin-left: 4%;
+}
+
+.mypage__wrapper--post1 {
+    background-color: #DADBDD;
+    width: 160px;
+    height: 160px;
+    float: left;
+    margin-right: 10%;
+    margin-top: 5%;
+}
