@@ -29,18 +29,21 @@ class CreateAppTables extends Migration
 
         Schema::create('item_conditions', function (Blueprint $table){
             $table->id();
-
-            // ここにカラムを追加していく
-
+            $table->string('name');
+            $table->integer('sort_no');
             $table->timestamps();
         });
-
+ 
         Schema::create('item', function (Blueprint $table){
             $table->id();
             $table->unsignedBigInteger('seller_id');
             $table->unsignedBigInteger('buyer_id');
             $table->unsignedBigInteger('secondary_category_id');
             $table->unsignedBigInteger('item_condition_id');
+            $table->string('item-image');
+            $table->string('item_picture');
+            $table->string('condition_text');
+
 
             // ここにカラムを追加していく
 

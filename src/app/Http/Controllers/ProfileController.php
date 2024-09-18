@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -16,14 +17,21 @@ class ProfileController extends Controller
 
     public function profile()
     {
-        return view('profile');
+        $user = Auth::user();
+        return view('profile', compact('user'));
     }
 
     public function edit(Request $request)
-    {  
-        $users = users::find($request->id);
-        return view('profile', ['user' => $author]);
+    {
+        $users = User::find($request->id);
+        $users->name = $request->name;
+        $users->post = $request->post;
+        $users->address = $request->address;
+        $users->building = $request->building;
+        $users->save();
 
-        return redirect('/mypage');
+        return view('profile', ['user' => $users]);
+
+        //        return redirect('/mypage');
     }
 }

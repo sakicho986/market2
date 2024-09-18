@@ -16,7 +16,7 @@
         @method('PATCH')
         @csrf
         <div class="update-form__item">
-            <input type="file" name="top_image" accept="image/png, image/jpeg" value="{{ $user->avatar_file_name }}">
+            <input type="file" name="avatar_file_name" accept="image/png, image/jpeg" value="{{ $user->avatar_file_name }}">
             <div class="rprofile-form__group">
                 <label class="profile-form__label" for="name">ユーザー名</label>
                 <input class="profile-form__input" type="text" name="name" value="{{ $user->name }}">
