@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
 use App\Http\Controllers\Controller;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -24,7 +24,7 @@ class ProfileController extends Controller
     public function edit(Request $request)
     {
         $request->validate([
-            'file' => 'required|file|mimes:jpg,png,pdf|max:2048',
+            'avatar_file_name' => 'file|mimes:jpg,png,pdf|max:2048',
         ]);
 
         // ファイルの保存
@@ -33,7 +33,7 @@ class ProfileController extends Controller
             $originalName = $file->getClientOriginalName();
             $file->store('uploads', 'public'); // 'public' ストレージに保存
         }
-
+        
         $users = User::find($request->id);
         $users->avatar_file_name = $originalName ?? null;
         $users->name = $request->name;
